@@ -11,7 +11,9 @@
             <div class="card-body">
               <p class="card-text">Название: {{ product.name }}</p>
               <p class="card-text">Продукция: {{ product.category }}</p>
-              <p class="card-text">Описание: {{ product.description }}</p>
+              <p class="card-text">Описание: {{ product.description|truncatechars:100 }}</p>
+              <p class="card-text">Цена: {{ product.price }}</p>
+              <p class="card-text">Дата производства: {{ product.created_at|date:"d M Y" }}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <a class="btn btn-primary" href="{% url 'catalogs:product_list' %}" role="button">Назад</a>
